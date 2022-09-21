@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import DefaultLayout from "./DefaultLayout";
+import Rockets from "./Components/Rockets/Rockets";
+import { firebase } from "./lib/firebase.prod";
+import { FirebaseContext } from "./context/firebase";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseContext.Provider value={{ firebase }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/mission/:id"
+            element={
+              <DefaultLayout>
+                <Rockets />
+              </DefaultLayout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </FirebaseContext.Provider>
   );
 }
 

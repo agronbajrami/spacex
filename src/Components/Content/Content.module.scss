@@ -1,0 +1,25 @@
+.content_cards {
+  // margin-top: 2rem;
+  // margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto 1rem;
+  gap: 2rem;
+}
+
+.load_more {
+  background-color: #001933;
+  color: white;
+  padding: 1rem;
+  font-size: large;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button_positioning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
