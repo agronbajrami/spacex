@@ -125,7 +125,7 @@ const Rockets = ({ app }) => {
           Submit
         </button>
         <div>
-          <h3>Comments:</h3>
+          <h3 style={{ color: "white" }}>Comments:</h3>
           {comments.map((comment) => (
             <Card
               key={comment.missionId + comment.comment}
